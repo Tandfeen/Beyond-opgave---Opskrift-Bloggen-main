@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer type="module" src="script.js"></script>
+</head>
+
+<body>
+    <header role="banner">
+        <h1>Min Opskriftsblog</h1>
+        <p aria-label="undertitel">Lækre opskrifter til hverdag og fest</p>
+    </header>
+    
+    <section id="opret-opskrift" aria-label="Opret en ny opskrift">
+        <h2>Opret en ny opskrift</h2>
+        <form id="opskriftsform" role="region">
+            <label for="titel">Titel:</label>
+            <input type="text" id="titel" name="titel" required>
+
+            <label for="ingredienser">Ingredienser:</label>
+            <textarea id="ingredienser" name="ingredienser" rows="4" cols="50" required></textarea>
+
+            <label for="fremgangsmade">Fremgangsmåde:</label>
+            <textarea id="fremgangsmade" name="fremgangsmade" rows="4" cols="50" required></textarea>
+
+            <label for="nøgleord">Nøgleord (komma-separeret):</label>
+            <input type="text" id="nøgleord" name="nøgleord">
+
+            <label for="kommentar">Kommentar:</label>
+            <textarea id="kommentar" name="kommentar" rows="4" cols="50"></textarea>
+
+            <input id="recipeImgButton" type="file" accept="image/*">
+            <input class="opret_btn" type="submit" value="Opret opskrift">
+        </form>
+    </section>
+
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Søg...">
+        <button id="filter-button" type="button">Filtrer</button>
+    </div>
+
+    
+    <form id="filterForm"></form>
+
+    <section contenteditable="false" id="opskrifter" aria-live="polite" aria-atomic="true" role="region" aria-label="Gemte opskrifter">
+        <div id="recipe-list"></div>
+    </section>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>

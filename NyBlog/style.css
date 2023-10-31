@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Space+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* ---------- Responsive web design */
+
+
+body {
+    font-family: montserrat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    color: white;
+    background-color: #85A1F2;
+    border-radius: 1em;
+    height: 10vh;
+    width: 100%;
+    border: solid;
+}
+
+/* ---------- Opret opskrift ---------- */
+
+#opret-opskrift {
+    padding: 1em;
+    margin: 1em;
+    margin-top: 5em ;
+    margin-bottom: 5em;
+    
+    -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+    -moz-box-shadow: 3px 3px 10px 3px #dddddd;
+    box-shadow: 3px 3px 10px 3px #dddddd;
+    width: 50vw;
+    
+    border-radius: 1em;
+    
+    /* border: solid; */
+
+}
+
+#opskriftsform {
+    width: 45vw;
+    height: 35vh;
+
+    /* align-items: center; */
+    justify-content: center;
+  
+    display: grid;
+    grid:
+      ". ." 1fr
+      ". ." 2fr
+      ". ." 2fr
+      ". ." 2fr
+      ". ." 2fr
+      "btn btn" 1fr
+      / 0.5fr 1fr;
+    gap: 8px;
+}
+  
+.opret_btn { 
+    grid-area: btn;
+    background-color: #85A1F2;
+    color: white;
+
+    border: none;
+    border-radius: 1em;    
+}
+
+input + textarea {
+    width: 20em;
+}
+
+/* ---------- Gemte opskrifter ---------- */
+
+article article {
+    min-width: 20em;
+    min-height: 20em;
+}
+
+
+.opskrift {
+    overflow: hidden;
+    background-color: white;
+    padding: 20px;
+    margin: 1em;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+    max-width: 100%; 
+    box-sizing: border-box; 
+}
+
+#opret-opskrift h2 {
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.opskrift p {
+    font-size: 16px;
+}
+
+/* Hover effect on opskriftskort */
+.opskrift:hover {
+    background-color: #ffffffe2;
+    transform: scale(1.02);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.opskrift {
+    min-width: fit-content;
+    min-height: 20em;
+}
+
+.opret_btn:active {
+    transition: 0.5s;
+    stroke: black 5px;
+}
+
+
+#ingredienser {
+    display: list-item;
+    list-style: circle;
+}
+
+#opskrifter {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: #d4cdcd54;
+    
+    box-shadow: 3px 0 30px 1em rgba(171, 167, 167, 0.199);
+}
+
+article button:hover {
+transition: 0.3s;
+background-color: #d26e6e54;
+}
+
+article button {
+    background-color: #85A1F2;
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 1em; 
+    padding: 0.2em;
+    margin-left: 1.2em;
+
+}
+
+/* Circular search bar styles */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f2f1f1c5;
+    border-radius: 60px;
+    padding: 5px 1px;
+    padding-top: 1em;
+    width: 98%;
+    height: 50%;
+    margin: 0 auto;
+    box-shadow: 3px 0 40px 1em rgba(171, 167, 167, 0.199);
+}
+
+#search-input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 2em;
+    flex-grow: 1;
+}
+
+#filter-button {
+    background-color: #85A1F2;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    z-index: 3;
+}
+
+#filterForm {
+    width: 0;
+    height: 0;
+
+    top: 35.67em;
+    right: 1em;
+    position: absolute;
+
+    transition: 1s;
+
+}
+
+#filterForm input {
+    display: none;
+}
+
+#filterForm label {
+    display: none;
+}
+
+#filterForm-aktiv input {
+    display: none;
+}
+
+form#filterForm-aktiv input:checked {
+    +label {
+
+        font-weight: bold;
+        border: solid black;
+    }
+}
+
+#filterForm-aktiv label{
+    font-size: 1em;
+    color: white;
+    text-align: center;
+
+    border-radius: 2em;
+    margin: 1px;
+    background-color: #85A1F2;
+}
+
+#filterForm-aktiv label:hover{
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    text-align: center;
+
+    border-radius: 2em;
+    margin: 1px;
+    background-color: #85A1F2;
+    transform: scale(1.1);
+    transition: .4s;
+    
+}
+
+#filterForm-aktiv {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 35.67em;
+    right: 1em;
+    width: 7em;
+    height: fit-content;
+    padding-top: 2em;
+    z-index: 2;
+
+    background-color: #d4cdcd54;
+    border-radius: 1em;
+    transition: 1s;
+
+}
+
+.ingrediensListe {
+    display: flex;
+    flex-direction: column;
+    >li {
+        display: list-item;
+        list-style: disc;
+        list-style-position: inside;
+        color: black;
+        background-color: white;}
+}
+
+.fremgangsmådeListe {
+    display: flex;
+    flex-direction: column;
+    >li {
+        display: list-item;
+        list-style: decimal;
+        list-style-position: inside;
+        color: black;
+        background-color: white;}
+}
+
+li {
+    display: inline;
+    list-style: none;
+    color: white;
+    background-color: #85A1F2;
+
+    border-radius: 3em;
+    margin-right: 0.5em;
+    padding-inline: 10px;
+}
+
+.keyword-button-container {
+    margin: 0;
+    padding: 0;
+
+    display: inline-table;
+    table-layout: auto;
+    
+    /* border: solid; */
+    
+}
+
+.nøgleordListe {
+    display: flex;
+}
+
+.add-keyword-button {
+    display: flex;
+}
